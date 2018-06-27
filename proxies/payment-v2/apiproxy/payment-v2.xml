@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <APIProxy revision="1" name="payment-v2">
     <Basepaths>/guardian/v2/payments</Basepaths>
-    <ConfigurationVersion majorVersion="1" minorVersion="0"/>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1529948412614</CreatedAt>
     <CreatedBy>vgadikota@google.com</CreatedBy>
     <Description>Use these services to initiate payment transactions.</Description>
