@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = function() {
-  this.When(/^I request an existing API resource $/, function (resource,callback) {
+  this.When(/^I request an existing API resource (.*)$/, function (resource,callback) {
      this.apickli.get(resource, callback);
    });
   
