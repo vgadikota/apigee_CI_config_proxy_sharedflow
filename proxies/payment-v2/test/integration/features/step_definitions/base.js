@@ -2,8 +2,8 @@
 'use strict';
 
 module.exports = function() {
-  this.When(/^I request an existing API resource$/, function (callback) {
-     this.apickli.get('/', callback);
+  this.When(/^I request an existing API resource (.*)$/, function (resource,callback) {
+     this.apickli.get('/resource', callback);
    });
 
   // this.When(/^I request an existing API resource$/, {timeout: 60 * 1000}, function (callback) {
