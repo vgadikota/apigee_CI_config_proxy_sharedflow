@@ -6,9 +6,6 @@ module.exports = function() {
      this.apickli.get('/resource', callback);
    });
 
-  // this.When(/^I request an existing API resource$/, {timeout: 60 * 1000}, function (callback) {
-  //     this.apickli.get('/', callback);
-  //  });
    //
    // this.Then(/^response body should be "([^"]*)"$/, function (responseBody, callback) {
    //    var assertion = this.apickli.assertResponseBodyContainsExpression(responseBody);
