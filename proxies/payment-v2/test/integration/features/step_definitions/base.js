@@ -5,8 +5,8 @@ module.exports = function() {
   this.When(/^I request an existing API resource (.*)$/, function (resource,callback) {
      this.apickli.get('/resource', callback);
    });
-
-   //
+  
+  
    // this.Then(/^response body should be "([^"]*)"$/, function (responseBody, callback) {
    //    var assertion = this.apickli.assertResponseBodyContainsExpression(responseBody);
    //
