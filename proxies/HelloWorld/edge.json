@@ -1,0 +1,121 @@
+{
+    "version": "1.0",
+    "envConfig": {
+        "test": {
+          "targetServers": [
+              {
+                "name" : "HTTPBin",
+                "host" : "httpbin.org",
+                "isEnabled" : true,
+                "port" : 80
+              }
+          ],
+          "caches": [
+              {
+                "name": "echocache",
+                "description": "echo cache",
+                "expirySettings": {
+                    "timeoutInSec": {
+                        "value": "300"
+                    },
+                    "valuesNull": false
+                }
+              }            
+          ],
+          "resourcefiles":[
+              {
+                "name": "test",
+                "type": "jsc",
+                "file": "./resourceFiles/jsc/test.js"
+              }    
+          ],
+          "kvms": [
+            {
+                "name": "backend_account_config",
+                "entry": [
+                    {
+                        "name": "COMPANY",
+                        "value": "example.com"
+                    },
+                    {
+                        "name": "PREFIX",
+                        "value": "EXMPL"
+                    }
+                ]
+            }
+        ],
+          "flowhooks":[
+               {
+                  "name":"PreProxyFlowHook",
+                  "continueOnError":"true",
+                  "sharedFlow":"security-sharedflow"
+               }
+            ]
+        }
+    },
+    "orgConfig": {
+        "apiProducts": [
+            {
+                "name": "EchoProduct",
+                "apiResources": [
+                    "/",
+                    "/**"
+                ],
+                "approvalType": "auto",
+                "attributes": [
+                    {
+                        "name": "description",
+                        "value": "Echo Product"
+                    }
+                ],
+                "description": "Echo Product",
+                "displayName": "Echo Product",
+                "environments": [
+                    "test",
+                    "prod"
+                ],
+                "proxies": [
+                    "HelloWorld"
+                ],
+                "quota": "10000",
+                "quotaInterval": "1",
+                "quotaTimeUnit": "month",
+                "scopes": []
+            }        
+        ],
+        "developers": [
+            {
+                "email": "john@example.com",
+                "firstName": "John",
+                "lastName": "Example",
+                "userName": "johnexample",
+                "attributes": []
+            },
+            {
+                "email": "bill@unesco.com",
+                "firstName": "Bill",
+                "lastName": "Buffalo",
+                "userName": "billunesco",
+                "attributes": []
+            }
+        ],
+        "developerApps": {
+            "john@example.com": [
+                {
+                    "name": "coolechoapp",
+                    "apiProducts": [ "EchoProduct" ],
+                    "callbackUrl": "http://weatherapp.com",
+                    "scopes": []
+                }
+            ],
+            "bill@unesco.com": [
+                {
+                    "name": "oneechoapp",
+                    "apiProducts": [ "EchoProduct" ],
+                    "callbackUrl": "http://weatherapp.com",
+                    "scopes": []
+                }
+            ]
+        }
+    }
+}

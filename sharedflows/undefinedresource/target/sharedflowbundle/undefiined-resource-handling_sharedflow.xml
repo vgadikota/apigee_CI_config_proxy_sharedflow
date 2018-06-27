@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="3" name="fd_undefiined-resource-handling_sharedflow">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1512154013341</CreatedAt>
+    <CreatedBy>vgadikota@google.com</CreatedBy>
+    <Description>undefined</Description>
+    <DisplayName>fd_undefiined-resource-handling_sharedflow</DisplayName>
+    <LastModifiedAt>1512154013341</LastModifiedAt>
+    <LastModifiedBy>vgadikota@google.com</LastModifiedBy>
+    <Policies>
+        <Policy>AssignMessage.Set404ErrorVariables</Policy>
+        <Policy>RaiseFault.RaiseEmptyFault</Policy>
+    </Policies>
+    <Resources/>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

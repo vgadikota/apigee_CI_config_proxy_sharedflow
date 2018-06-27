@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <DefaultFaultRule name="all">
+        <Step>
+            <Name>FlowCalloutErrorHandling</Name>
+        </Step>
+    </DefaultFaultRule>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>FlowCalloutThreatProtection</Name>
+            </Step>
+            <Step>
+                <Name>FlowCalloutAuthentication</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="payment">
+            <Description>Create a payment sale, auth or credit transaction.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/payment") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="ping">
+            <Description>Ping</Description>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>FlowCalloutPingResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/ping") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="status">
+            <Description>Status</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/status") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="catchAll">
+            <Description>catch all undefined resources</Description>
+            <Request>
+                <Step>
+                    <Name>FlowCalloutUndefinedResource</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/fiserv/v1/payments</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="no-target">
+        <Condition>(proxy.pathsuffix MatchesPath "/ping") and (request.verb = "GET")</Condition>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

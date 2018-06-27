@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" mapIdentifier="spikeArrestLimitMap" name="KeyValueMapGetSpikeArrestLimit">
+    <DisplayName>KeyValueMap.GetSpikeArrestLimit</DisplayName>
+    <Get assignTo="spikeArrestLimit">
+        <Key>
+            <Parameter ref="apiproxy.name"/>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

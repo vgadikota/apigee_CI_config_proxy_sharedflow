@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><SharedFlowBundle name="Shared-Flow" revision="1">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1484865229614</CreatedAt>
+    <CreatedBy>ssvaidyanathan@apigee.com</CreatedBy>
+    <Description>vgadikota git revision unknown vgadikota-macbookpro1.roam.corp.google.com</Description>
+    <DisplayName>Shared-Flow</DisplayName>
+    <LastModifiedAt>1484865351228</LastModifiedAt>
+    <LastModifiedBy>ssvaidyanathan@apigee.com</LastModifiedBy>
+    <Policies>
+        <Policy>Quota-1</Policy>
+        <Policy>Spike-Arrest-1</Policy>
+        <Policy>Verify-API-Key-1</Policy>
+        <Policy>Assign-Message-1</Policy>
+    </Policies>
+    <Resources/>
+    <Spec/>
+    <subType>SharedFlow</subType>
+    <validate>false</validate>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

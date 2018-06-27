@@ -1,0 +1,6 @@
+{
+	"demoApi": {
+		"domain": "fiservpoc-test.apigee.net",
+		"basepath": "/fiserv/v1/payments"
+	}
+}

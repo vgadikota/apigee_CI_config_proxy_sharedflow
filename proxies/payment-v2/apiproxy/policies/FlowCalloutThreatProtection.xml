@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlowCallout async="false" continueOnError="false" enabled="true" name="FlowCalloutThreatProtection">
+    <DisplayName>FlowCallout.ThreatProtection</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <SharedFlowBundle>threatprotection_sharedflow</SharedFlowBundle>
+</FlowCallout>

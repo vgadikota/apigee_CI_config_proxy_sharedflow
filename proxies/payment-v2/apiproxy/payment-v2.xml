@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="payment-v2">
+    <Basepaths>/guardian/v2/payments</Basepaths>
+    <ConfigurationVersion majorVersion="1" minorVersion="0"/>
+    <CreatedAt>1529948412614</CreatedAt>
+    <CreatedBy>vgadikota@google.com</CreatedBy>
+    <Description>Use these services to initiate payment transactions.</Description>
+    <DisplayName>payment-v2</DisplayName>
+    <LastModifiedAt>1529948412614</LastModifiedAt>
+    <LastModifiedBy>vgadikota@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:c5b0a7e9ea7a32b2ce40caf42abe610178fde5c705967d3419ddeb9f593fc4bd4462cc103236178c4d38da3d0ee817e064e59f38d0f2e5787c486a52302d001c</ManifestVersion>
+    <Policies>
+        <Policy>FlowCalloutAuthentication</Policy>
+        <Policy>FlowCalloutErrorHandling</Policy>
+        <Policy>FlowCalloutPingResponse</Policy>
+        <Policy>FlowCalloutThreatProtection</Policy>
+        <Policy>FlowCalloutUndefinedResource</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>openapi://association.json</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

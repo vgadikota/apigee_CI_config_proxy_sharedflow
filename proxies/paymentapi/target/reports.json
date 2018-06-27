@@ -1,0 +1,57 @@
+[
+  {
+    "id": "Resource-not-found",
+    "name": "Resource not found",
+    "description": "As an API consumer\nI want to be informed when I request non-existing resources\nSo I can learn the API and fix my errors quickly",
+    "line": 1,
+    "keyword": "Feature",
+    "uri": "/Users/vgadikota/FiServ/api-coe/MVN/src/gateway/paymentapi/target/test/integration/features/notfound.feature",
+    "elements": [
+      {
+        "name": "I should get an error when I request non-existing resources",
+        "id": "Resource-not-found;i-should-get-an-error-when-i-request-non-existing-resources",
+        "line": 6,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1130736
+            },
+            "match": {
+              "location": "/Users/vgadikota/FiServ/api-coe/MVN/src/gateway/paymentapi/target/test/integration/features/step_definitions/init.js:11"
+            }
+          },
+          {
+            "name": "I request a non-existing API resource",
+            "line": 7,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 261759222
+            },
+            "match": {
+              "location": "/Users/vgadikota/FiServ/api-coe/MVN/src/gateway/paymentapi/target/test/integration/features/step_definitions/notfound.js:6"
+            }
+          },
+          {
+            "name": "response code should be 404",
+            "line": 8,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 654309
+            },
+            "match": {
+              "location": "/Users/vgadikota/FiServ/api-coe/MVN/src/gateway/paymentapi/target/test/integration/features/step_definitions/apickli-gherkin.js:150"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

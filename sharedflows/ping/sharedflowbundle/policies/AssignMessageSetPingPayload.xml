@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AssignMessageSetPingPayload">
+    <DisplayName>AssignMessage.SetPingPayload</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">{"message":"API proxy is up", "detail":"API proxy looks all good"}
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="response"/>
+</AssignMessage>

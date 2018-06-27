@@ -1,0 +1,39 @@
+<project 
+    xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>apigee</groupId>
+    <artifactId>parent-pom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Maven Plugin Repository</name>
+            <url>http://repo1.maven.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+    
+    <modules>
+       <module>Shared-Flow-OAuth</module>
+       <module>Shared-Flow-Quota</module>
+       <module>Shared-Flow-Spike-Arrest</module>
+	   <module>Shared-Flow-Ping</module>
+	   <module>Shared-Flow-SAP-Auth</module>
+	   <module>Shared-Flow-CORS</module>
+       <module>Shared-Flow-Fault-Rules</module>
+       <module>Shared-Flow-AWS-ERP-Auth</module>
+       <module>Shared-Flow-AWS-Lambda-ARN</module>
+       <module>Shared-Flow-ECC-Maintenance-Flag</module>
+	   <module>Shared-Flow-HMAC</module>
+	   <module>Shared-Flow-Alert</module>
+	</modules>
+</project>

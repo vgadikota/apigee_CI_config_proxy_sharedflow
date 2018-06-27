@@ -1,0 +1,90 @@
+{
+    "version": "1.0",
+    "envConfig": {
+        "test": {
+          "targetServers": [
+              {
+                "name" : "mock",
+                "host" : "vgadikota-eval-test.apigee.net",
+                "isEnabled" : true,
+                "port" : 80
+              }
+          ],
+          "resourcefiles":[
+              {
+                "name": "test",
+                "type": "jsc",
+                "file": "./resourceFiles/jsc/test.js"
+              }    
+          ],
+          "kvms": [
+            {
+                "name": "spikeArrestLimitMap",
+                "entry": [
+                    {
+                        "name": "payment-v1",
+                        "value": "5pm"
+                    }
+                ]
+            }
+        ],
+          "flowhooks":[
+               {
+                  "name":"PostProxyFlowHook",
+                  "continueOnError":"true",
+                  "sharedFlow":"logging_sharedflow"
+               }
+            ]
+        }
+    },
+    "orgConfig": {
+        "apiProducts": [
+            {
+                "name": "PaymentProduct",
+                "apiResources": [
+                    "/",
+                    "/**"
+                ],
+                "approvalType": "auto",
+                "attributes": [
+                    {
+                        "name": "description",
+                        "value": "Payment Product"
+                    }
+                ],
+                "description": "Payment Product",
+                "displayName": "Payment Product",
+                "environments": [
+                    "test",
+                    "prod"
+                ],
+                "proxies": [
+                    "payment-v1"
+                ],
+                "quota": "10000",
+                "quotaInterval": "1",
+                "quotaTimeUnit": "month",
+                "scopes": []
+            }        
+        ],
+        "developers": [
+            {
+                "email": "vgadikota@google.com",
+                "firstName": "Vidheer",
+                "lastName": "Gadikota",
+                "userName": "vgadikota@google.com",
+                "attributes": []
+            }
+        ],
+        "developerApps": {
+            "vgadikota@google.com": [
+                {
+                    "name": "coolpaymentapp",
+                    "apiProducts": [ "PaymentProduct" ],
+                    "callbackUrl": "http://weatherapp.com",
+                    "scopes": []
+                }
+            ]
+        }
+    }
+}

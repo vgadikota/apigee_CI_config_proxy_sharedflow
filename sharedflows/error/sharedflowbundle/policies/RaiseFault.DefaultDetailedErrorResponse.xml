@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RaiseFault.DefaultDetailedErrorResponse">
+    <DisplayName>RaiseFault.DefaultDetailedErrorResponse</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers>
+                <Header name="Content-Type">{flow.error.content.type}</Header>
+            </Headers>
+            <Payload contentType="{flow.error.content.type}">
+{
+	"errorResponse": {
+		"code": "{flow.error.code}",
+		"message": "{flow.error.message}",
+		"developerInfo": {
+			"developerMessage": "{flow.error.message}",
+			"moreInfo": "{flow.error.info}",
+			"fieldError": [
+        {
+       "field": "example id",
+       "message": "exampleId is mandatory"
+     }
+   ]
+		}
+	}
+}
+			</Payload>
+            <StatusCode>{flow.error.status}</StatusCode>
+            <ReasonPhrase>{flow.error.reason}</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

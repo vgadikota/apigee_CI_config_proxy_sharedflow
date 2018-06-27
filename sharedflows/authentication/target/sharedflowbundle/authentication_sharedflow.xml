@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="1" name="authentication_sharedflow">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1513061583258</CreatedAt>
+    <CreatedBy>vgadikota@google.com</CreatedBy>
+    <Description>undefined</Description>
+    <DisplayName>fd_authentication_sharedflow</DisplayName>
+    <LastModifiedAt>1513061583258</LastModifiedAt>
+    <LastModifiedBy>vgadikota@google.com</LastModifiedBy>
+    <Policies>
+        <Policy>AssignMessageRemoveAccessToken</Policy>
+        <Policy>OAuthV2VerifyAccessToken</Policy>
+    </Policies>
+    <Resources/>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <Name>JavaScriptDebugVariables</Name>
+    </Step>
+    <Step>
+        <Name>AssignMessage.Set400ErrorVariables</Name>
+        <Condition>
+                    (fault.name = "ExceededContainerDepth") or 
+                    (fault.name = "ExceededObjectEntryCount") or 
+                    (fault.name = "ExceededArrayElementCount") or 
+                    (fault.name = "ExceededObjectEntryNameLength") or 
+                    (fault.name = "ExceededStringValueLength") or 
+                    (fault.name = "SourceUnavailable") or 
+                    (fault.name = "NonMessageVariable") or 
+                    (fault.name = "ExecutionFailed")
+                </Condition>
+    </Step>
+    <Step>
+        <Name>AssignMessage.Set401ErrorVariables</Name>
+        <Condition>
+                    (fault.name = "FailedToResolveAccessToken") or 
+                    (fault.name = "FailedToResolveToken") or 
+                    (fault.name = "FailedToResolveAuthorizationCode") or 
+                    (fault.name = "InsufficientScope") or 
+                    (fault.name = "access_token_expired") or 
+                    (fault.name = "InvalidOperation")
+                </Condition>
+    </Step>
+    <Step>
+        <Name>AssignMessage.Set429ErrorVariables</Name>
+        <Condition>
+                    (fault.name = "SpikeArrestViolation") or 
+                    (fault.name = "InvalidMessageWeight") or 
+                    (fault.name = "ErrorLoadingProperties") or 
+                    (fault.name = "InvalidAllowedRate") or 
+                    (fault.name = "FailedToResolveSpikeArrestRate")
+                </Condition>
+    </Step>
+    <Step>
+        <Name>AssignMessage.Set404ErrorVariables</Name>
+        <Condition>
+                    (fault.name = "ScriptExecutionFailed") or 
+                    (fault.name = "ScriptExecutionFailedLineNumber") or 
+                    (fault.name = "ScriptSecurityError") or 
+                    (fault.name = "StepDefinitionExecutionFailed") or 
+                    (fault.name = "invalid_access_token") or 
+                    (fault.name = "FailedToResolveSpikeArrestRate") or 
+                    (flow.error.message = "not found")
+                </Condition>
+    </Step>
+    <Step>
+        <Condition>flow.error.code = null</Condition>
+        <Name>AssignMessage.Set500ErrorVariables</Name>
+    </Step>
+    <Step>
+        <Name>RaiseFault.DefaultDetailedErrorResponse</Name>
+    </Step>
+</SharedFlow>

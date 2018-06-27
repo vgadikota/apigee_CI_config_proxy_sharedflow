@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="FlowCalloutAuthentication" version="SHA-512:823bb6c93116b029d56f2d5018c4026572289390da7dacdb6a892793edd413af333a17d789ae84c42014d2bb8b99e2668064054e89ebc825c9898372a83cd239"/>
+        <VersionInfo resourceName="FlowCalloutErrorHandling" version="SHA-512:cec1bbae36a660d3ffcada48c44558ab74977c0e4cd11c8171fc790efa94c4f328ba9e2292de17eb27bc353705fcc7b903dbc898ae21fd9e04a20b29cc1257b9"/>
+        <VersionInfo resourceName="FlowCalloutPingResponse" version="SHA-512:8b87a83f62c45e33d0fa3427412739331dce4246e3c499e86fdf8f63a7d63723176f71764724abf4f31be6ab9f873743098ed4f7c6939449a56491f98f7e3eb8"/>
+        <VersionInfo resourceName="FlowCalloutThreatProtection" version="SHA-512:fbbf854a4a1e929675dcb39eee2798f3ab37b5d869bef8f15c25c062e6900e1390431d0af2491af683f508a809adf205ed8dc8ce752e61e56a526ff011edae09"/>
+        <VersionInfo resourceName="FlowCalloutUndefinedResource" version="SHA-512:40449f165703c740ffe3b2ce65b7ff555fce6b9ed04bba4551a7a274e37c46940136a04e6a94bb57f201b8031cc60b66e314b48eb89c03f0d6f1786c565d7434"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:958da4f5f3f34c44e695f57f95d73ecd0bbefcfabe0f24b08d3350f959a4b4eafa5b5bd519b15908b6192e4ac80293965aeb2f16c48d03e03a8ab71afaf8d6d8"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="openapi://association.json" version="SHA-512:aa50869e37e4f2ba58c08db5416e4d5a6eeb15c185345526a5d970313fc27cb04fb8a52d1747fdce0a67a601e9acb6e8e1e9749522c6246c11ab97a9479511db"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:316bb5e25c62dd857e53022535f63a5f9ef9f6470d8d4c0e969e58d52484df364173472fbdede965bc972d35e8b37b9ba74630f228190942071f42c641a5d1c3"/>
+    </TargetEndpoints>
+</Manifest>
