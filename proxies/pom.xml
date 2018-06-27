@@ -21,7 +21,7 @@
     </pluginRepositories>
     
     <modules>
-       <module>paymentapi</module>
+       <module>payment-v2</module>
 	</modules>
 </project>
 
