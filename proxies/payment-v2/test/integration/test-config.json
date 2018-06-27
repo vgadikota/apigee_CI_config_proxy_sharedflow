@@ -1,6 +1,6 @@
 {
 	"demoApi": {
-		"domain": "fiservpoc-test.apigee.net",
-		"basepath": "/fiserv/v1/payments"
+		"domain": "vgadikota-eval-test.apigee.net",
+		"basepath": "/svc/v2/payments"
 	}
 }
