@@ -7,7 +7,7 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Apigee</groupId>
+	<groupId>api</groupId>
 	<artifactId>payment-v2</artifactId>
 	<version>1.0</version>
 	<name>payment-v2</name>
