@@ -1,6 +1,6 @@
 {
 	"demoApi": {
-		"domain": "vgadikota-eval-test.apigee.net",
+		"domain": "amer-poc12-test.apigee.net",
 		"basepath": "/svc/v2/payments"
 	}
 }
