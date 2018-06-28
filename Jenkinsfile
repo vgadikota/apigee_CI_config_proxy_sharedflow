@@ -2,17 +2,19 @@ node {
  try {
   
   stage('Preparation') {
-   mvnHome = tool 'm3'
+    git 'https://github.com/vgadikota/apigee_CI_config_proxy_sharedflow.git'
+   mvnHome = tool 'M3'
   }
 
 try {
   stage('Deploy to Test') {
    // Run the maven build
-   sh "'${mvnHome}/bin/mvn' -f /usr/lib/node_modules/npm/apigee-ci-deploy-bdd-lint-master/hr-api/pom.xml install -Pprod -Dusername=<email_here> -Dpassword=<password_here>"
+   sh "'${mvnHome}/bin/mvn' -f $WORKSPACE/proxies/pom.xml install -Ptest -Dorg=amer-poc12 -Dusername=<username> -Dpassword=<password> -Dapigee.config.options=update -X validate"
+   cucumber fileIncludePattern: '**/proxies/payment-v2/target/reports.json', sortingMethod: 'ALPHABETICAL'
    }
 }catch (e) {
-   //if tests fail, I have used an shell script which has 3 APIs to undeploy, delete current revision & deploy previous revision
-   sh "$WORKSPACE/undeploy.sh"
+   //if tests fail, we can use a shell script which has 3 APIs to undeploy, delete current revision & deploy previous revision
+   //sh "$WORKSPACE/undeploy.sh"
    throw e
   } finally {
    
@@ -21,11 +23,11 @@ try {
 try {
   stage('Deploy to Production') {
    // Run the maven build
-   sh "'${mvnHome}/bin/mvn' -f /usr/lib/node_modules/npm/apigee-ci-deploy-bdd-lint-master/hr-api/pom.xml install -Pprod -Dusername=<email_here> -Dpassword=<password_here>"
+   sh "'${mvnHome}/bin/mvn' -f $WORKSPACE/proxies/pom.xml install -Pprod -Dorg=amer-poc12 -Dusername=v<username> -Dpassword=<password> -Dapigee.config.options=update -X validate"
   }
   } catch (e) {
-   //if tests fail, I have used an shell script which has 3 APIs to undeploy, delete current revision & deploy previous revision
-   sh "$WORKSPACE/undeploy.sh"
+   //if tests fail, we can use a shell script which has 3 APIs to undeploy, delete current revision & deploy previous revision
+   //sh "$WORKSPACE/undeploy.sh"
    throw e
   } finally {
    
@@ -37,3 +39,4 @@ try {
   
  }
 }
+
