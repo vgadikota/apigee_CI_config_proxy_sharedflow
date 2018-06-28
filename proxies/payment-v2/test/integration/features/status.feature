@@ -1,4 +1,4 @@
-Feature: Resource  found
+Feature: API status
 	As an API consumer
 	I want to be informed when I request status
 	So I can learn the API availability
