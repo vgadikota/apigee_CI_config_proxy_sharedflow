@@ -5,7 +5,7 @@
           "targetServers": [
               {
                 "name" : "mock",
-                "host" : "vgadikota-eval-test.apigee.net",
+                "host" : "amer-poc12-test",
                 "isEnabled" : true,
                 "port" : 80
               }
