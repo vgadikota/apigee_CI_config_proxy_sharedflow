@@ -15,6 +15,6 @@
         <LoadBalancer>
             <Server name="mock"/>
         </LoadBalancer>
-        <Path>/payment-v2-mock</Path>
+        <Path>/payment-v1-mock</Path>
     </HTTPTargetConnection>
 </TargetEndpoint>
