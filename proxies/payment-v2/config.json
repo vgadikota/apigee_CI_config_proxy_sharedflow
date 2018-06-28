@@ -1,19 +1,7 @@
 {
-    "configurations": [
+    "configurations":
         {
-            "name": "sit",
-            "policies": [],
-            "proxies": [],
-            "targets": []
-        },
-        {
-            "name": "uat",
-            "policies": [],
-            "proxies": [],
-            "targets": []
-        },
-        {
-            "name": "dev",
+            "name": "prod",
             "policies": [],
             "proxies": [],
             "targets": []
