@@ -35,6 +35,41 @@
                   "sharedFlow":"logging_sharedflow"
                }
             ]
+        },
+        "prod": {
+          "targetServers": [
+              {
+                "name" : "mock",
+                "host" : "amer-poc12-prod",
+                "isEnabled" : true,
+                "port" : 80
+              }
+          ],
+          "resourcefiles":[
+              {
+                "name": "test",
+                "type": "jsc",
+                "file": "./resourceFiles/jsc/test.js"
+              }    
+          ],
+          "kvms": [
+            {
+                "name": "spikeArrestLimitMap",
+                "entry": [
+                    {
+                        "name": "payment-v2",
+                        "value": "5pm"
+                    }
+                ]
+            }
+        ],
+          "flowhooks":[
+               {
+                  "name":"PostProxyFlowHook",
+                  "continueOnError":"true",
+                  "sharedFlow":"logging_sharedflow"
+               }
+            ]
         }
     },
     "orgConfig": {
