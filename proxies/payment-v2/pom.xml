@@ -75,6 +75,16 @@
 				<apigee.apitype>${apitype}</apigee.apitype>
 			</properties>
 		</profile>
+		<profile> 
+ <id>release</id>
+ <distributionManagement>
+   <repository>
+     <id>apiReleaseRepository</id>
+     <name>Internal Maven Release Repository</name>
+     <url>${release.url}</url>
+   </repository>
+ </distributionManagement>
+</profile>
 	</profiles>
 	
 	
