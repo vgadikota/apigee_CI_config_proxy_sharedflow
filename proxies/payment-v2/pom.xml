@@ -52,7 +52,8 @@
 				<apigee.org>${org}</apigee.org>
 				<apigee.username>${username}</apigee.username>
 				<apigee.password>${password}</apigee.password>
-				<apigee.options>update</apigee.options>
+				<apigee.options>override</apigee.options>
+				<apigee.override.delay>5</apigee.override.delay>
 				<api.northbound.domain>${org}-test.apigee.net</api.northbound.domain>
 				<api.testtag>~@wip</api.testtag>
 				<apigee.apitype>${apitype}</apigee.apitype>
