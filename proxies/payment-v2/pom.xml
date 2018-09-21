@@ -53,7 +53,7 @@
 				<apigee.username>${username}</apigee.username>
 				<apigee.password>${password}</apigee.password>
 				<apigee.options>override</apigee.options>
-				<apigee.override.delay>5</apigee.override.delay>
+				<apigee.override.delay>1</apigee.override.delay>
 				<api.northbound.domain>${org}-test.apigee.net</api.northbound.domain>
 				<api.testtag>~@wip</api.testtag>
 				<apigee.apitype>${apitype}</apigee.apitype>
@@ -70,7 +70,7 @@
 				<apigee.username>${username}</apigee.username>
 				<apigee.password>${password}</apigee.password>
 				<apigee.options>override</apigee.options>
-				<apigee.override.delay>5</apigee.override.delay>
+				<apigee.override.delay>1</apigee.override.delay>
 				<api.northbound.domain>${org}-prod.apigee.net</api.northbound.domain>
 				<api.testtag>~@wip,~@mock</api.testtag>
 				<apigee.apitype>${apitype}</apigee.apitype>
