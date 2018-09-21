@@ -23,7 +23,7 @@
                 "entry": [
                     {
                         "name": "payment-v2",
-                        "value": "5ps"
+                        "value": "10ps"
                     }
                 ]
             }
@@ -58,7 +58,7 @@
                 "entry": [
                     {
                         "name": "payment-v2",
-                        "value": "5pm"
+                        "value": "10ps"
                     }
                 ]
             }
