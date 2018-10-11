@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
 	<parent>
 		<groupId>apigee</groupId>
 		<artifactId>parent-pom</artifactId>
@@ -53,7 +53,7 @@
 				<apigee.username>${username}</apigee.username>
 				<apigee.password>${password}</apigee.password>
 				<apigee.options>override</apigee.options>
-				<apigee.override.delay>1</apigee.override.delay>
+				<apigee.override.delay>5</apigee.override.delay>
 				<api.northbound.domain>${org}-test.apigee.net</api.northbound.domain>
 				<api.testtag>~@wip</api.testtag>
 				<apigee.apitype>${apitype}</apigee.apitype>
@@ -70,7 +70,7 @@
 				<apigee.username>${username}</apigee.username>
 				<apigee.password>${password}</apigee.password>
 				<apigee.options>override</apigee.options>
-				<apigee.override.delay>1</apigee.override.delay>
+				<apigee.override.delay>5</apigee.override.delay>
 				<api.northbound.domain>${org}-prod.apigee.net</api.northbound.domain>
 				<api.testtag>~@wip,~@mock</api.testtag>
 				<apigee.apitype>${apitype}</apigee.apitype>
@@ -113,27 +113,6 @@
 					</execution>
 				</executions>
 			</plugin>
-           <!--  <plugin>
-                <groupId>io.apigee.build-tools.enterprise4g</groupId>
-                <artifactId>apigee-edge-maven-plugin</artifactId>
-                <version>1.0.2</version>
-                <executions>
-                    <execution>
-                        <id>configure-bundle-step</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>configure</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>deploy-bundle</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin> -->
             <plugin>
                 <groupId>com.apigee.edge.config</groupId>
                 <artifactId>apigee-config-maven-plugin</artifactId>
@@ -210,7 +189,7 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.3.2</version>
 				<executions>
-					<!--npm install-->
+					<!-- npm install -->
 					<execution>
 						<id>npm-install</id>
 						<phase>validate</phase>
@@ -224,8 +203,8 @@
 							</commandlineArgs>
 						</configuration>
 					</execution>
-					<!--run unit tests-->
-					<!--<execution>
+					<!-- run unit tests -->
+					<execution>
 						<id>unit</id>
 						<phase>test</phase>
 						<goals>
@@ -237,9 +216,9 @@
 								node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha test/unit
 							</commandlineArgs>
 						</configuration>
-					</execution>-->
-					<!--Check Code Coverage-->
-					<execution>
+					</execution>
+					<!-- Check Code Coverage-->
+					<!--<execution>
 						<id>check-coverage</id>
 						<phase>test</phase>
 						<goals>
@@ -251,9 +230,9 @@
 								node_modules/istanbul/lib/cli.js check-coverage
 							</commandlineArgs>
 						</configuration>
-					</execution>
-					<!--run apigeelint
-					its got issues on Jenkins-->
+					</execution>-->
+					<!-- run apigeelint -->
+					<!-- its got issues on Jenkins -->
 					<execution>
 						<id>apigeelint</id>
 						<phase>validate</phase>
@@ -267,25 +246,22 @@
 							</commandlineArgs>
 						</configuration>
 					</execution>
-					<!--run integration tests-->
-					
+					<!-- run integration tests -->
+					<execution>
+						<id>integration</id>
+						<phase>install</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>./node_modules/cucumber/bin/cucumber.js</executable>
+							<commandlineArgs>
+								target/test/integration/features --tags ${api.testtag} --format json:target/reports.json
+							</commandlineArgs>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
-			
-		<!--	<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <configuration>
-                <descriptor>bin.xml</descriptor>
-            </configuration>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>single</goal>
-                    </goals>
-                </execution>
-            </executions>
-       	 </plugin>-->
         </plugins>
     </build>
     <!--<profiles>
