@@ -205,7 +205,7 @@
 				</executions>
 			</plugin>
 
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.3.2</version>
@@ -224,8 +224,8 @@
 							</commandlineArgs>
 						</configuration>
 					</execution>
-					run unit tests
-					<execution>
+					<!--run unit tests-->
+					<!--<execution>
 						<id>unit</id>
 						<phase>test</phase>
 						<goals>
@@ -237,8 +237,8 @@
 								node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha test/unit
 							</commandlineArgs>
 						</configuration>
-					</execution>
-					Check Code Coverage
+					</execution>-->
+					<!--Check Code Coverage-->
 					<execution>
 						<id>check-coverage</id>
 						<phase>test</phase>
@@ -252,8 +252,8 @@
 							</commandlineArgs>
 						</configuration>
 					</execution>
-					run apigeelint
-					its got issues on Jenkins
+					<!--run apigeelint
+					its got issues on Jenkins-->
 					<execution>
 						<id>apigeelint</id>
 						<phase>validate</phase>
@@ -267,9 +267,9 @@
 							</commandlineArgs>
 						</configuration>
 					</execution>
-					run integration tests
+					<!--run integration tests-->
 					
-			</plugin> -->
+			</plugin>
 			
 		<!--	<plugin>
             <groupId>org.apache.maven.plugins</groupId>
