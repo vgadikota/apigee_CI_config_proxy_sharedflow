@@ -138,7 +138,7 @@
                 <groupId>com.apigee.edge.config</groupId>
                 <artifactId>apigee-config-maven-plugin</artifactId>
                 <version>1.2.1</version>
-                <!-- <executions>
+                <executions>
                     <execution>
                         <id>create-config-targetserver</id>
                         <phase>verify</phase>                        
@@ -181,7 +181,7 @@
                             <goal>apps</goal>
                         </goals>
                     </execution>
-                </executions> -->
+                </executions>
             </plugin>            
 <plugin>
 				<groupId>io.apigee.build-tools.enterprise4g</groupId>
