@@ -75,7 +75,7 @@
     "orgConfig": {
         "apiProducts": [
             {
-                "name": "paymentproduct2",
+                "name": "helloworld-product",
                 "apiResources": [
                     "/",
                     "/**"
