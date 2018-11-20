@@ -5,7 +5,7 @@
           "targetServers": [
               {
                 "name" : "mock",
-                "host" : "amer-poc12-test",
+                "host" : "vgadikota-eval-test",
                 "isEnabled" : true,
                 "port" : 80
               }
@@ -40,7 +40,7 @@
           "targetServers": [
               {
                 "name" : "mock",
-                "host" : "amer-poc12-prod",
+                "host" : "vgadikota-eval-prod",
                 "isEnabled" : true,
                 "port" : 80
               }
