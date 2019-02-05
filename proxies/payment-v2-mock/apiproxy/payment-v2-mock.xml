@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="3" name="payment-v2-mock">
+    <Basepaths>/payment-v1-mock</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1543612517491</CreatedAt>
+    <CreatedBy>vgadikota@google.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>payment-v1-mock</DisplayName>
+    <LastModifiedAt>1543612517491</LastModifiedAt>
+    <LastModifiedBy>vgadikota@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:34f0d6ca9803678a0ce2429f975b86efa3dac44a74d11e1c65cc7875477fedd511b8d97cc1df893c261c63dbe0dd6892aea2bbc1843d2bb8bb53ca4beb195975</ManifestVersion>
+    <Policies/>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>node://.DS_Store</Resource>
+        <Resource>node://config.json</Resource>
+        <Resource>node://mock/sales.json</Resource>
+        <Resource>node://mock/sales_1.xml</Resource>
+        <Resource>node://mock/status.json</Resource>
+        <Resource>node://node_modules_apimocker.zip</Resource>
+        <Resource>node://package.json</Resource>
+        <Resource>node://target.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

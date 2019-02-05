@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <approvedAmount>
+      <currencyCode>USD</currencyCode>
+      <value>1234</value>
+   </approvedAmount>
+   <correlationId>1234</correlationId>
+   <gatewayMessage>Transaction Normal</gatewayMessage>
+   <gatewayResponseCode>00</gatewayResponseCode>
+   <transactionId>1234</transactionId>
+   <transactionStatus>approved</transactionStatus>
+   <validationStatus>success</validationStatus>
+</root>

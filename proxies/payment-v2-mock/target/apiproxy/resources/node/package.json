@@ -1,0 +1,17 @@
+{
+
+"name": "payment-v1-mock",
+
+"version": "1.0.0",
+
+"description": "Mock",
+
+"main": "target.js",
+
+"devDependencies": {
+
+"apimocker": "^1.0.5"
+
+}
+
+}

@@ -1,0 +1,9 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "editor.tabSize": 2,
+  "files.autoSave": "onWindowChange",
+  "editor.cursorStyle": "line",
+  "editor.minimap.enabled": true,
+  "zenMode.restore": true,
+  "editor.dragAndDrop": true
+}

@@ -1,0 +1,10 @@
+{
+  "correlationId": "1234",
+  "transactionStatus": "approved",
+  "validationStatus": "success",
+  "fdTransactionId": "1234",
+  "approvedAmount": {
+    "value": "1234",
+    "currencyCode": "USD"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "api": "payments-v1",
+    "component": "Acme",
+    "latency": {
+      "total": 200,
+      "target": 100
+    },
+    "status": "passed",
+    "message": "able to connect to Acme"
+  }
