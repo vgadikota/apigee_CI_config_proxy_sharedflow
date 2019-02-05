@@ -57,7 +57,9 @@ On every pipeline execution, the code goes through the following steps:
 9. Clone/Fork this repo & Create a directory structure as per sharedflows directory & place your sharedflow folder inside it.
 10. If you are using Jenkins for build and deployment automation  copy-paste Jenkinsfile Script from this repo to your Pipeline Job.
 11. If you are trying using maven alone, trigger build manually, with following command
+
 mvn -f ./sharedflows/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Dusername=<email_here> -Dpassword=<password_here>
+
 12. The build steps and the options available for building and deploying Shared Flows are the same as API Proxy
 13. The only key difference between the API Proxy and the Shared Flow is a new property as part of the profiles.
 <apigee.apitype>sharedflow</apigee.apitype>
@@ -70,7 +72,8 @@ mvn -f ./sharedflows/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Du
 4. Clone/Fork this repo & Create a directory structure as per proxies/payment-v2 directory & place your apiproxy folder.
 5. If you are using Jenkins for build and deployment automation  copy-paste Jenkinsfile Script from this repo to your Pipeline Job.
 6. If you are trying using maven alone, trigger build manually, with following command
-mvn -f ./proxies/pom.xml install -Dorg=sudheendrascna-eval -Ptest -Dusername=vgadikota@google.com -Dpassword=Apigee1! -Dapigee.config.options=update
+
+mvn -f ./proxies/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Dusername=<email_here> -Dpassword=<password_here> -Dapigee.config.options=update
 
 7. Apigee Lint will go through the apiproxy folder,
 ![alt text](https://user-images.githubusercontent.com/28925814/40007499-98bd6dfe-57ba-11e8-8d95-ba09a6000039.jpg)
