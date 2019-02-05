@@ -19,15 +19,9 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
-    
+
     <modules>
+      <module>payment-v2-mock</module>
        <module>payment-v2</module>
 	</modules>
 </project>
-
-
-
-
-
-
-

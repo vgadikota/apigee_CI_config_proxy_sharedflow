@@ -12,9 +12,7 @@
     </PostFlow>
     <Flows/>
     <HTTPTargetConnection>
-        <LoadBalancer>
-            <Server name="mock"/>
-        </LoadBalancer>
-        <Path>/payment-v1-mock</Path>
+        <Properties/>
+        <URL>http://vgadikota-eval-test.apigee.net/payment-v2-mock</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>

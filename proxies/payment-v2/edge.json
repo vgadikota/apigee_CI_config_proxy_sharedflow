@@ -5,7 +5,7 @@
           "targetServers": [
               {
                 "name" : "mock",
-                "host" : "vgadikota-eval-test",
+                "host" : "sudheendrascna-eval-test",
                 "isEnabled" : true,
                 "port" : 80
               }
@@ -15,7 +15,7 @@
                 "name": "test",
                 "type": "jsc",
                 "file": "./resourceFiles/jsc/test.js"
-              }    
+              }
           ],
           "kvms": [
             {
@@ -40,7 +40,7 @@
           "targetServers": [
               {
                 "name" : "mock",
-                "host" : "vgadikota-eval-prod",
+                "host" : "sudheendrascna-eval-prod",
                 "isEnabled" : true,
                 "port" : 80
               }
@@ -50,7 +50,7 @@
                 "name": "test",
                 "type": "jsc",
                 "file": "./resourceFiles/jsc/test.js"
-              }    
+              }
           ],
           "kvms": [
             {
@@ -72,54 +72,5 @@
             ]
         }
     },
-    "orgConfig": {
-        "apiProducts": [
-            {
-                "name": "helloworld-product",
-                "apiResources": [
-                    "/",
-                    "/**"
-                ],
-                "approvalType": "auto",
-                "attributes": [
-                    {
-                        "name": "description",
-                        "value": "Payment2 Product2"
-                    }
-                ],
-                "description": "Payment Product2",
-                "displayName": "Payment Product2",
-                "environments": [
-                    "test",
-                    "prod"
-                ],
-                "proxies": [
-                    "payment-v2"
-                ],
-                "quota": "10000",
-                "quotaInterval": "1",
-                "quotaTimeUnit": "month",
-                "scopes": []
-            }        
-        ],
-        "developers": [
-            {
-                "email": "vgadikota@google.com",
-                "firstName": "Vidheer",
-                "lastName": "Gadikota",
-                "userName": "vgadikota@google.com",
-                "attributes": []
-            }
-        ],
-        "developerApps": {
-            "vgadikota@google.com": [
-                {
-                    "name": "coolpaymentapp2",
-                    "apiProducts": [ "PaymentProduct2" ],
-                    "callbackUrl": "http://weatherapp.com",
-                    "scopes": []
-                }
-            ]
-        }
-    }
+    "orgConfig": {}
 }

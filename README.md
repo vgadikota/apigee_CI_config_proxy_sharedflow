@@ -45,31 +45,51 @@ On every pipeline execution, the code goes through the following steps:
 2. NodeJS & NPM
 3. Configure Jenkins with Git, Cucumber Reports, JDK, Maven, NodeJS
 
+# Info/Instructions for sharedflows deployment
+1. sharedflows/pom.xml - will have list of sharedflows that needs to be deployed
+2. authentication : Sharedflow with policies to verify access_token(OAuth)
+3. error : Sharedflow with Apigee recommended error handling pattern implementation, to handle all proxy related errors
+4. ping : Sharedflow with policies to check the availability of a proxy
+5. security : Sharedflow with policies like Spike arrest, Quota, to secure an API proxy from unexpected surge in API usage
+6. ThreatProtection : Sharedflow with RegEX, JSON & XML threat protections policies to protect proxy from malicious content
+7. undefinedresource : Sharedflow to handle any undefined resource
+8. authentication : Sharedflow with policies to verify access_token(OAuth)
+9. Clone/Fork this repo & Create a directory structure as per sharedflows directory & place your sharedflow folder inside it.
+10. If you are using Jenkins for build and deployment automation  copy-paste Jenkinsfile Script from this repo to your Pipeline Job.
+11. If you are trying using maven alone, trigger build manually, with following command
+mvn -f ./sharedflows/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Dusername=<email_here> -Dpassword=<password_here>
+12. The build steps and the options available for building and deploying Shared Flows are the same as API Proxy
+13. The only key difference between the API Proxy and the Shared Flow is a new property as part of the profiles.
+<apigee.apitype>sharedflow</apigee.apitype>
 
-# Demo Guide
-1. proxies/pom.xml - will have list of proxies that needs to be deployed 
-2. payment-v2 : Which does charge, status & ping operations on provided credit card. For backend I am using Apimocker proxy.
-3. Download payment-v2 from this repo , zip "payment-v2/apiproxy" folder & deploy to test env or create an sample API Proxy.
+# Info/Instructions for proxies deployment
+1. proxies/pom.xml - will have list of proxies that needs to be deployed
+2. payment-v2 : Which does charge, status & ping operations on provided credit card.
+3. payment-v1-mock :  Mock proxy using Apimocker node module, backend for payment-v2.
+3. Download payment-v2 from this repo , zip "payment-v2/apiproxy" folder & deploy to test env or create a sample API Proxy.
 4. Clone/Fork this repo & Create a directory structure as per proxies/payment-v2 directory & place your apiproxy folder.
-5. I have manually copy-pasted my Jenkinsfile Script in my Pipeline Job.
-6. Trigger Build Manually. 
+5. If you are using Jenkins for build and deployment automation  copy-paste Jenkinsfile Script from this repo to your Pipeline Job.
+6. If you are trying using maven alone, trigger build manually, with following command
+mvn -f ./proxies/pom.xml install -Dorg=sudheendrascna-eval -Ptest -Dusername=vgadikota@google.com -Dpassword=Apigee1! -Dapigee.config.options=update
+
 7. Apigee Lint will go through the apiproxy folder,
 ![alt text](https://user-images.githubusercontent.com/28925814/40007499-98bd6dfe-57ba-11e8-8d95-ba09a6000039.jpg)
 
-8. Build & Deploy happens through Apigee Maven Plugin(update pom files with appropiate details),
+8. Build & Deploy happens through Apigee Maven Plugin(update pom files with appropriate details),
 
-mvn -f /proxies/pom.xml install -Pprod -Dusername=<email_here> -Dpassword=<password_here>
 ![alt text](https://user-images.githubusercontent.com/28925814/40007503-9ba8be74-57ba-11e8-921f-b556a4048c77.jpg)
 
 9. Integration tests happen through Apickli - Cucumber - Gherkin Tests,
 
 cucumber-js --format json:reports.json features/status.feature
 
-10. Cucumber Reports plugin in Jenkins will use the reports.json file to create HTML Reports & satistics. 
+10. Cucumber Reports plugin in Jenkins will use the reports.json file to create HTML Reports & satistics.
 ![alt text](https://user-images.githubusercontent.com/28925814/40005985-e5518528-57b6-11e8-85e8-2327449d84a6.jpg)
 
-11. If Integration tests fail, then through a undeploy.sh shell script undeploy current deployed versions
+11. If Integration tests fail, use a shell script like undeploy.sh to undeploy current deployed versions
 
 curl -X DELETE --header "Authorization: Basic <base64 username:password>" "https://api.enterprise.apigee.com/v1/organizations/$org_name/environments/$env_name/apis/$api_name/revisions/$rev_num/deployments"
 curl -X DELETE --header "Authorization: Basic <base64 username:password>" "https://api.enterprise.apigee.com/v1/organizations/$org_name/apis/$api_name/revisions/$rev_num"
 curl -X POST --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Basic <base64 username:password>" "https://api.enterprise.apigee.com/v1/organizations/$org_name/environments/$env_name/apis/$api_name/revisions/$pre_rev/deployments"
+
+12. If maven build is success, you should see payment-v2 & payment-v1-mock proxies deployed and running in your edge org

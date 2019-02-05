@@ -9,7 +9,7 @@
     <PreFlow name="PreFlow">
         <Request>
             <Step>
-                <Name>FlowCalloutAuthentication</Name>
+                <Name>FlowCalloutThreatProtection</Name>
             </Step>
         </Request>
         <Response/>
