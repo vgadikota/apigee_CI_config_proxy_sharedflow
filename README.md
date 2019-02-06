@@ -65,7 +65,7 @@ On every pipeline execution, the code goes through the following steps:
 <apigee.apitype>sharedflow</apigee.apitype>
 
 # please note:
-14. Before re-deploying shared flows, from second time onwards, disable "logging_sharedflow" from flowhook using edgeUI, 
+14. Before re-deploying shared flows, from second time onwards, detatch "logging_sharedflow" from flowhook using edgeUI, 
 Admin-->Environments-->Flow Hooks
 
 # Info/Instructions for proxies deployment
