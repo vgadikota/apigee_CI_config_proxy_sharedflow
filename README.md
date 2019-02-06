@@ -64,6 +64,10 @@ On every pipeline execution, the code goes through the following steps:
 13. The only key difference between the API Proxy and the Shared Flow is a new property as part of the profiles.
 <apigee.apitype>sharedflow</apigee.apitype>
 
+# please note:
+14. Before re-deploying shared flows, from second time onwards, disable "logging_sharedflow" from flowhook using edgeUI, 
+Admin-->Environments-->Flow Hooks
+
 # Info/Instructions for proxies deployment
 1. proxies/pom.xml - will have list of proxies that needs to be deployed
 2. payment-v2 : Which does charge, status & ping operations on provided credit card.
