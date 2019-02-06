@@ -58,7 +58,7 @@ On every pipeline execution, the code goes through the following steps:
 10. If you are using Jenkins for build and deployment automation  copy-paste Jenkinsfile Script from this repo to your Pipeline Job.
 11. If you are trying using maven alone, trigger build manually, with following command
 
-mvn -f ./sharedflows/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Dusername=<email_here> -Dpassword=<password_here>
+# mvn -f ./sharedflows/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Dusername=<email_here> -Dpassword=<password_here>
 
 12. The build steps and the options available for building and deploying Shared Flows are the same as API Proxy
 13. The only key difference between the API Proxy and the Shared Flow is a new property as part of the profiles.
@@ -67,13 +67,13 @@ mvn -f ./sharedflows/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Du
 # Info/Instructions for proxies deployment
 1. proxies/pom.xml - will have list of proxies that needs to be deployed
 2. payment-v2 : Which does charge, status & ping operations on provided credit card.
-3. payment-v1-mock :  Mock proxy using Apimocker node module, backend for payment-v2.
+3. payment-v2-mock :  Mock proxy using Apimocker node module, backend for payment-v2.
 3. Download payment-v2 from this repo , zip "payment-v2/apiproxy" folder & deploy to test env or create a sample API Proxy.
 4. Clone/Fork this repo & Create a directory structure as per proxies/payment-v2 directory & place your apiproxy folder.
 5. If you are using Jenkins for build and deployment automation  copy-paste Jenkinsfile Script from this repo to your Pipeline Job.
 6. If you are trying using maven alone, trigger build manually, with following command
 
-mvn -f ./proxies/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Dusername=<email_here> -Dpassword=<password_here> -Dapigee.config.options=update
+# mvn -f ./proxies/pom.xml install -Dorg=<org_name_here> -P<env_name_here> -Dusername=<email_here> -Dpassword=<password_here> -Dapigee.config.options=update
 
 7. Apigee Lint will go through the apiproxy folder,
 ![alt text](https://user-images.githubusercontent.com/28925814/40007499-98bd6dfe-57ba-11e8-8d95-ba09a6000039.jpg)
@@ -96,3 +96,29 @@ curl -X DELETE --header "Authorization: Basic <base64 username:password>" "https
 curl -X POST --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Basic <base64 username:password>" "https://api.enterprise.apigee.com/v1/organizations/$org_name/environments/$env_name/apis/$api_name/revisions/$pre_rev/deployments"
 
 12. If maven build is success, you should see payment-v2 & payment-v1-mock proxies deployed and running in your edge org
+
+13. Curl commands to verify deployments
+    i) curl -X GET \
+  https://<org_name>-<env_name>.apigee.net/svc/v2/payments/status
+  
+  ii) curl -X POST \
+  https://<org_name>-<env_name>.apigee.net/svc/v2/payments/payment \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 44a1962e-5899-40f5-9ef6-89fffb2f1c83' \
+  -H 'cache-control: no-cache' \
+  -d '{
+  "funding": {
+    "creditCard": {
+      "cardholderName": "John Smith",
+      "expiryDate": {
+        "month": "09",
+        "year": "20"
+      },
+      "number": "4111111111111111",
+      "securityCode": "444",
+      "sequenceNumber": "01",
+      "type": "American Express"
+    },
+    "method": "creditCard"
+  }
+}'
